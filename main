@@ -1,10 +1,13 @@
 import os
 import numpy as np
+from PIL import Image
 
 #фунция что бы открыть папку и считывает сколько там файлов
 with print(os.listdir("C:\2 ИСХОДНЫЕ СНИМКИ для полигонов\96 kv\RGB")) as file:
 #массив
 array = [row.strip() for row in file]
+
+#обрезка фото
 
 Пишете тут свой код .... его будут видеть все 
 Пишите обязатель с коментариями!!!
