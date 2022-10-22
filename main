@@ -1,4 +1,7 @@
 import os
+import PIL
+import os.path
+import glob
 import numpy as np
 from PIL import Image
 
@@ -8,7 +11,19 @@ with print(os.listdir("C:\2 ИСХОДНЫЕ СНИМКИ для полигон�
 array = [row.strip() for row in file]
 
 #обрезка фото
-
-Пишете тут свой код .... его будут видеть все 
-Пишите обязатель с коментариями!!!
-Потому что я не создал этот файл
+# Обрезает исходное изображение до 20 * 20 пикселей
+def convertjpg(jpgfile,outdir,width=1920,height=1240):
+    img=Image.open(jpgfile)
+    try:
+        new_img=img.resize((width,height),Image.BILINEAR)   
+        new_img.save(os.path.join(outdir,os.path.basename(jpgfile)))
+    except Exception as e:
+        print(e)
+        
+# Равномерно разрезать весь формат PNG под этой папкой
+for jpgfile in glob.glob('/home/luke/INRIAPerson/neg/*.png'):
+        
+# создаем папку вывода и выводим туда фото
+if not os.path.isdir("foto"):
+     os.mkdir("foto")
+      convertjpg(jpgfile,'foto')
