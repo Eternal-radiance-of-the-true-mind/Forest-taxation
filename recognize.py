@@ -1,4 +1,4 @@
-#test image prediction for debugging
+#используемые библиотеки и файлы
 from utilities import *
 import matplotlib.pyplot as plt
 import cv2
@@ -14,7 +14,7 @@ from os.path import isfile, join
 import numpy
 
 
-
+#откуда берем фото 
 def test_predict():
     config = read_config()
     model = read_model(config["model_path"], config)
@@ -25,7 +25,7 @@ def test_predict():
 
 #test_predict()
 
-
+#путь вывода обработанной фотографии
 mypath='D:/Download/Aviahack_2022/SPB_TKUIK/upload/'
 onlyfiles = [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]
 images = numpy.empty(len(onlyfiles), dtype=object)
