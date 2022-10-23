@@ -1,4 +1,4 @@
-#используемые библиотеки и файлы
+#использование библиотек и файлов
 import os
 import cv2
 import pandas as pd
@@ -21,13 +21,13 @@ def prediction_wrapper(image_path, save_dir ="predictions"):
                 
 def predict_all_images():
         """
-        loop through a dir and run all images to get bounding box predictions
+        выполните цикл по каталогу и запустите все изображения, чтобы получить прогнозы ограничивающих рамок
         """
-        #Чтение конфигурации
+        #чтение конфигурации
         model = main.deepforest()
         model.use_release()
         
-        #создание модели
+        #чтение модели
         tifs = glob.glob("data/evaluation/RGB/*.tif")
         print("{} images found for prediction".format(len(tifs)))
         for tif in tifs:
