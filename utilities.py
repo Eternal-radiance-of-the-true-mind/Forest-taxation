@@ -1,4 +1,4 @@
-#utility functions for demo
+#используемые библиотеки и файлы
 import os
 import cv2
 import pandas as pd
@@ -11,7 +11,7 @@ def prediction_wrapper(image_path, save_dir ="predictions"):
         model = main.deepforest()
         model.use_release()
         
-        # Predict and save image
+        # Прогнозирование и сохранение изображения
         prediction = model.predict_image(path = image_path, return_plot=True)
         prediction_name = os.path.basename(os.path.splitext(image_path)[0]) + "_prediction.jpg"
         save_path = os.path.join(save_dir,prediction_name)
@@ -23,11 +23,11 @@ def predict_all_images():
         """
         loop through a dir and run all images to get bounding box predictions
         """
-        #Read config
+        #Чтение конфигурации
         model = main.deepforest()
         model.use_release()
         
-        #read model
+        #создание модели
         tifs = glob.glob("data/evaluation/RGB/*.tif")
         print("{} images found for prediction".format(len(tifs)))
         for tif in tifs:
@@ -37,5 +37,5 @@ def predict_all_images():
                   df = model.predict_image(path = tif, return_plot=False)
                   if df is None:
                           continue
-                  #save boxes
+                  #сохранение бокса
                   df.to_csv(file_path)
