@@ -7,7 +7,7 @@ from deepforest import main
 
 def prediction_wrapper(image_path, save_dir ="predictions"):
         
-        #Load a model
+        #Загрузите модель
         model = main.deepforest()
         model.use_release()
         
