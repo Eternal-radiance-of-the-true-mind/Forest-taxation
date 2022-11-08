@@ -1,0 +1,35 @@
+name: TreeDemo
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - click
+  - fiona
+  - pyfor
+  - gdal
+  - geopandas
+  - geos
+  - h5py
+  - jupyter
+  - keras
+  - numpy
+  - matplotlib
+  - pandas
+  - pillow
+  - python=3.6
+  - rtree
+  - scipy
+  - shapely
+  - tensorflow
+  - yaml
+  - pip:
+    - laspy
+    - laxpy
+    - numba
+    - opencv-contrib-python
+    - opencv-python
+    - plyfile
+    - rasterio
+    - slidingwindow
+    - xmltodict
+    - DeepForest
